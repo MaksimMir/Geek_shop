@@ -1,0 +1,33 @@
+@import '../general/mixins';
+@import '../general/typography';
+
+.btn {
+    @include font;
+    @include border($color: $red);
+    @include fstyle(16px, $color: $red);
+    display: inline-block;
+    padding: 14px 38px;
+    background-color: transparent;
+    cursor: pointer;
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: 0.1em;
+    line-height: 19px;
+    margin-top: 48px;
+    transition: all .3s;
+    &:hover {
+        background-color: $red;
+        color: $light;
+    }
+    &-black {
+        @include border($color: $accent);
+        color: $accent;
+        &:hover {
+            box-shadow: -2px -2px -2px black;
+        }
+    }
+    &-block {
+        display: block;
+        width: 100%;
+    }
+}

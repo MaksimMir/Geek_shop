@@ -1,0 +1,28 @@
+@mixin border($radius: 0px, $size: 1px, $color: #ffffff) {
+    border: $size solid $color;
+    border-radius: $radius;
+}
+
+@mixin applay-p {
+    p {
+        @content;
+    }
+}
+
+@mixin large {
+    @media (max-width: 1024px) {
+        @content; 
+    }     
+}
+
+@mixin middle {
+    @media (max-width: 768px) {
+        @content; 
+    }     
+}
+
+@mixin small {
+    @media (max-width: 375px) {
+        @content; 
+    }     
+}

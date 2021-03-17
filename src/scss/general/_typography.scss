@@ -1,0 +1,60 @@
+@import '../general/_variables';
+@import '../general/mixins';
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+
+@mixin font {
+    font-family: 'Lato', sans-serif;
+}
+
+@mixin fstyle($size, $wight: 400, $color: $accent) {
+    font-size: $size;
+    font-weight: $wight;
+    color: $color;
+}
+
+.box_title {
+    @include font;
+    @include fstyle(13px, $color: #000);
+    line-height: 16px;
+    margin-bottom: 12px
+}
+
+.box_text {
+    @include font;
+    @include fstyle(14px, 300, $text-gray);
+    line-height: 17px;
+    margin-bottom: 18px
+}
+
+.box_price {
+    @include font;
+    @include fstyle(16px, $color: $red);
+    line-height: 19px;
+}
+
+.feature_title {
+    @include font;
+    @include fstyle(19px, $color: $bg-box);
+    text-align: center;
+    line-height: 24px;
+    margin-top: 20px;
+    margin-bottom: 16px;
+}
+
+.feature_text {
+    @include font;
+    @include fstyle(13px, 300, $bg-box);
+    text-align: center;
+    line-height: 17px;
+}
+
+.top_title {
+    @include font;
+    @include fstyle(48px, 900, $accent);
+    line-height: 56px;
+    margin-bottom: 7px;
+    @include middle {
+        @include fstyle(38px, 900, $accent);
+        line-height: 45px;
+    }
+}

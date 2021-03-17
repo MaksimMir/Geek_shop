@@ -1,0 +1,44 @@
+@import '../general/variables';
+@import '../general/typography';
+@import '../general/mixins';
+
+.product_card {
+    position: relative;
+    width: 350px;
+    text-align: left;
+    margin-bottom: 30px;
+    &-img > img {
+        width: 100%;
+    }
+    &-text {
+        padding: 25px 18px 20px;
+        background-color: $bg-box;
+    }
+}
+
+.black {
+    position: absolute;
+    width: 100%;
+    height: 409px;
+    top: 0;
+    left: 0;
+    background-color: rgba(58, 56, 56, 0.86);
+    &_link {
+        width: 138px;
+        margin: 50% auto;
+        @include fstyle(14px, $color: $light);
+        line-height: 17px;
+        padding: 13px;
+        @include border;
+        text-align: center;
+        cursor: pointer;
+        transition: all .3s;
+        & .fa {
+            padding-right: 5px;
+        }
+        &:hover {
+            background-color: $light;
+            color: inherit;
+        }
+    }
+}

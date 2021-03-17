@@ -1,0 +1,407 @@
+@import './general/base';
+@import './general/mixins';
+@import './general/typography';
+@import './general/variables';
+@import './helpers/classes';
+@import './components/ui';
+
+
+.black_line {
+    padding: 20px 0;
+    background-color: $accent;
+}
+
+.logo {
+    display: inline-block;
+    width: 44px;
+    height: 38px;
+    background: url('img/logo.svg') no-repeat center;
+}
+
+.top {
+    justify-content: space-between;
+}
+
+.top_left, .top_right {
+    font-size: 26px;
+    color: $text-light;
+    line-height: 30px;
+}
+
+.top_left {
+    @include large {
+        margin-left: 16px;
+    }
+    @include middle {
+        margin-left: 0;
+        width: 100%;
+    }
+    & .fa {
+        padding: 7px 40px;
+        @include middle {
+            padding-right: 20px;
+        }
+    }
+    & input {
+        background-color: $accent;
+        border: none;
+        outline: none;
+        width: 50%;
+        font-size: 14px;
+        color: $text-light;
+        @include middle {
+            width: 20%;
+        }
+    }
+}
+
+.top_right {
+    justify-content: flex-end;
+    @include large {
+        margin-right: 16px;
+    }
+    @include middle {
+        margin-right: 0;
+        width: 10%;
+    }
+    &-item {
+        padding-left: 33px;
+        position: relative;
+        & .fa-shopping-cart::after {
+            content: '1';
+            position: absolute;
+            display: block;
+            width: 14px;
+            height: 14px;
+            border-radius: 7px;
+            background-color: $red;
+            font-size: 3px;
+            text-align: center;
+            line-height: 17px;
+            top: -2px;
+            right: -7px;
+        }
+        &:nth-child(2), &:last-child {
+            @include middle {
+                display: none;
+            }
+        }
+    }
+}
+
+.poster {
+    position: relative;
+    background-color: $bg-pink;
+    margin-bottom: 63px;
+    overflow: hidden;
+    &_content {
+        min-height: 764px;
+        @include middle {
+            min-height: 367px;
+        }
+        &-img {
+            background: url('img/banner-img.png') no-repeat -200px 0;
+            @include middle {
+                display: none;
+            }
+        }
+        &-text {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            @include middle {
+                width: 100%;
+                align-items: center;
+            }
+        }
+        &-block {
+            padding-left: 16px;
+            border-left: 12px solid $red;
+        }
+    }
+    &_black, &_red {
+        @include fstyle(32px, 700);
+        margin-right: 10px;
+        line-height: 38px;
+        @include middle {
+            @include fstyle(20px, 700);
+            line-height: 24px;
+        }
+    }
+    &_red {
+        color: $red;
+    }
+    & .menu {
+        position: absolute;
+        top: 0;
+        right: -240px;
+        width: 200px;
+        min-height: 764px;
+        background-color: $light;
+        padding-left: 33px;
+        z-index: 10;
+        transition: all .7s;
+        &.active {
+            right: 0;
+            box-shadow: -5px 5px 20px #b8b8b8;
+        }
+        &_top {
+            position: relative;
+            margin-top: 16px;
+            margin-right: 16px
+        }
+        &_title {
+            @include fstyle(14px, 700, #000);
+            line-height: 17px;
+            text-transform: uppercase;
+            padding: 30px 0;
+        }
+        &_close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            border: none;
+            outline: none;
+            background-color: inherit;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all .5s;
+            &:hover {
+                color: $red;
+                transform: rotate(90deg);
+            }
+        }
+        &_list {
+             &-items {
+                @include fstyle(14px, $color: $red);
+                line-height: 17px;
+                margin-bottom: 12px;
+            }
+            &-submenu {
+                margin-left: 20px;
+                margin-bottom: 20px;
+            }
+            &-item {
+                @include fstyle(14px);
+                line-height: 17px;
+                margin-bottom: 11px;
+            }
+        }
+        
+    }
+}
+
+.offer {
+    &_items {
+        justify-content: space-between;
+        @include middle {
+            flex-direction: column;
+        }
+    }
+    &_item {
+        position: relative;
+        margin-right: 30px;
+        margin-bottom: 30px;
+        @include middle {
+            margin-right: 0;
+        }
+        &::before {
+            content: '';
+            top: 0;
+            left: 0;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background-color: rgba(33, 22, 22, 0.7);
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+        &-img {
+            width: 100%;
+        }
+        &-title {
+            position: absolute;
+            top: 40%;
+            width: 100%;
+            text-align: center;
+            z-index: 10;
+        }
+        &-text {
+            @include fstyle(16px, $color: $text-light);
+            line-height: 19px;
+        }
+        &-red {
+            @include fstyle(19px, $color: $red);
+            line-height: 25px;
+        }
+    }
+    
+}
+
+.products {
+    text-align: center;
+    margin: 96px 0;
+    &_title {
+        @include fstyle(30px);
+        line-height: 36px;
+        margin-bottom: 7px;
+    }
+    &_text {
+        @include fstyle(14px, $color: $text-gray);
+        line-height: 17px;
+        margin-bottom: 48px;
+    }
+    &_cards {
+        justify-content: space-between;
+    }
+}
+
+.feature {
+    background-color: $accent;
+    &_items {
+        justify-content: space-between;
+        padding: 104px 0;
+        text-align: center;
+        @include large {
+            flex-direction: column;
+            align-items: center;
+            padding-top: 49px;
+            padding-bottom: 64px;
+        }
+    }
+    &_item {
+        width: 30%;
+        @include large {
+            margin-bottom: 48px;
+        }
+        @include middle {
+            width: 100%;
+        }
+    }
+}
+
+.subscrabe {
+    position: relative;
+    background: url('img/bottom_bg.png') no-repeat center;
+    background-size: cover;
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(244, 244, 244, 0.7);
+    }
+    &_content {
+        justify-content: space-between;
+        @include large {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    &_comments, &_form {
+        position: relative;
+        min-height: 460px;
+        text-align: center;
+        z-index: 10;
+        @include large {
+            min-height: 250px;
+        }
+        @include middle {
+            width: 100%;
+        }
+        &-text {
+            margin-top: 30px;
+            @include fstyle(20px);
+            line-height: 24px;
+        }
+        &-italic {
+            font-style: italic;
+        }
+        & .item {
+            top: 25%;
+            left: 0;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 1s;
+            &.showed {
+                opacity: 1;
+            }
+        }
+    }
+    &_form {
+        &-content {
+            margin: 30% auto;
+        }
+
+        &-title {
+            @include fstyle(24px, 700);
+            line-height: 30px;
+            margin-bottom: 7px;
+        }
+        &-subtitle {
+            @include fstyle(18px);
+            line-height: 25px;
+            margin-bottom: 32px;
+        }
+        &-input {
+            @include fstyle(14px);
+            padding: 15px 20px;
+            border-radius: 20px 0 0 20px;
+            border: none;
+            outline: none;
+            background-color: #e1e1e1;
+        }
+        &-button {
+            padding: 15px;
+            border-radius: 0 20px 20px 0;
+            background-color: $red;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            color: $light;
+            margin-left: -3px;
+            transition: all .3s;
+            &:hover {
+                background-color: darken($red, 10%);
+            }
+        }
+    }
+
+}
+
+.footer {
+    justify-content: space-between;
+    @include middle {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    &_copyright {
+        @include fstyle(16px, $color: $bg-box);
+        line-height: 19px;
+        padding: 5px 0;
+    }
+    &_socialy {
+        @include middle {
+            padding: 40px 0;
+        }
+    }
+    &_socialy .fa {
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        background-color: $light;
+        text-align: center;
+        line-height: 32px;
+        margin-left: 7px;
+        transition: all .3s;
+        &:hover {
+            background-color: $red;
+            color: $light;
+        }
+    }
+}

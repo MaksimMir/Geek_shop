@@ -1,0 +1,21 @@
+@mixin icon {
+    background-image: url('img/sprites.png');
+    display: inline-block;
+    width: 47px;
+    height: 40px; 
+}
+
+.icon {
+    &-delivery {
+        @include icon;
+        background-position: -70px -5px;  
+    }
+    &-sales {
+        @include icon;
+        background-position: -7px -10px;
+    }
+    &-quality {
+        @include icon;
+        background-position: 58px -10px;
+    }
+}
