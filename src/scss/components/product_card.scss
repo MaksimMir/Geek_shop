@@ -4,41 +4,46 @@
 
 .product_card {
     position: relative;
-    width: 350px;
+    width: 360px;
     text-align: left;
     margin-bottom: 30px;
+    @include extra-large {
+        width: 320px;
+    }
+    &-img {
+        height: 420px;
+    }
     &-img > img {
         width: 100%;
     }
     &-text {
         padding: 25px 18px 20px;
-        background-color: $bg-box;
+        background-color: $bg-gray;
     }
 }
 
 .black {
     position: absolute;
     width: 100%;
-    height: 409px;
+    height: 420px;
     top: 0;
     left: 0;
     background-color: rgba(58, 56, 56, 0.86);
     &_link {
-        width: 138px;
-        margin: 50% auto;
+        @include border($color: $light);
         @include fstyle(14px, $color: $light);
+        width: 130px;
         line-height: 17px;
-        padding: 13px;
-        @include border;
+        padding: 13px 0;
+        margin: 50% auto;
         text-align: center;
-        cursor: pointer;
         transition: all .3s;
         & .fa {
             padding-right: 5px;
         }
         &:hover {
             background-color: $light;
-            color: inherit;
+            color: $accent;
         }
     }
 }

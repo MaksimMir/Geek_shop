@@ -5,6 +5,10 @@ window.addEventListener("load", () => {
     const cards = document.querySelectorAll('.product_card');
     const linkOnCart = document.querySelector('.black_link');
     const items = document.querySelectorAll('.subscrabe_comments .item');
+    const slides = document.querySelectorAll('.preview_slider-item');
+    const page = document.querySelector('.preview_slider-line');
+    const prev = document.querySelector('.preview_slider-btn .prev');
+    const next = document.querySelector('.preview_slider-btn .next');
     let i = 0;
 
     const black = document.createElement('div');
@@ -40,7 +44,6 @@ window.addEventListener("load", () => {
         
         items[i].classList.add('showed');
     }, 5000);
-
     
 });
 

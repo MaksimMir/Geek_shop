@@ -9,6 +9,8 @@
 .black_line {
     padding: 20px 0;
     background-color: $accent;
+    position: relative;
+    z-index: 1;
 }
 
 .logo {
@@ -90,10 +92,8 @@
 }
 
 .poster {
-    position: relative;
     background-color: $bg-pink;
     margin-bottom: 63px;
-    overflow: hidden;
     &_content {
         min-height: 764px;
         @include middle {
@@ -132,67 +132,57 @@
     &_red {
         color: $red;
     }
-    & .menu {
-        position: absolute;
-        top: 0;
-        right: -240px;
-        width: 200px;
-        min-height: 764px;
-        background-color: $light;
-        padding-left: 33px;
-        z-index: 10;
-        transition: all .7s;
-        &.active {
-            right: 0;
-            box-shadow: -5px 5px 20px #b8b8b8;
+}
+
+.links {
+    min-height: 148px;
+    margin-bottom: 51px;
+    background-color: #F8F3F4;
+    &_content {
+        padding: 60px 0;
+        justify-content: space-between;
+        @include middle {
+            flex-direction: column;
+            align-items: center;
+            padding: 24px 0 46px 0;
         }
-        &_top {
-            position: relative;
-            margin-top: 16px;
-            margin-right: 16px
-        }
-        &_title {
-            @include fstyle(14px, 700, #000);
-            line-height: 17px;
-            text-transform: uppercase;
-            padding: 30px 0;
-        }
-        &_close {
-            position: absolute;
-            top: 0;
-            right: 0;
-            border: none;
-            outline: none;
-            background-color: inherit;
-            font-size: 20px;
-            cursor: pointer;
-            transition: all .5s;
-            &:hover {
-                color: $red;
-                transform: rotate(90deg);
+        &.special {
+            @include middle {
+                padding-bottom: 0;
+                padding-top: 60px;
             }
         }
-        &_list {
-             &-items {
-                @include fstyle(14px, $color: $red);
-                line-height: 17px;
-                margin-bottom: 12px;
-            }
-            &-submenu {
-                margin-left: 20px;
-                margin-bottom: 20px;
-            }
-            &-item {
-                @include fstyle(14px);
-                line-height: 17px;
-                margin-bottom: 11px;
-            }
+    }
+    &_title {
+        @include fstyle(24px, $color: $red);
+        line-height: 29px;
+        text-transform: uppercase;
+        @include middle {
+            margin-bottom: 32px
         }
-        
+    }
+    &_address {
+        @include fstyle(14px, 300, $text-gray);
+        line-height: 17px;
+        text-transform: uppercase;
+        padding: 5px 0;
+        &-black:hover {
+            text-decoration: underline;
+        }
+        &-red {
+            @include fstyle(14px, 700, $red);
+        }
+    }
+    &.prod {
+        margin-bottom: 0;
     }
 }
 
 .offer {
+    margin-bottom: 96px;
+    @include middle {
+        margin-bottom: 24px;
+    }
     &_items {
         justify-content: space-between;
         @include middle {
@@ -241,9 +231,257 @@
     
 }
 
+.preview {
+    margin-bottom: 120px;
+    text-align: center;
+    &_slider {
+        position: relative;
+        min-height: 550px;
+        background-color: #f7f7f7;
+        @include border($color: #e0e0e0);
+        z-index: -10;
+        @include large {
+            z-index: 0;
+            border: none;
+        }
+        &-box {
+            max-width: 597px;
+            margin: 0 auto;
+            padding: 20px 0;
+            box-sizing: border-box;
+            // @include large {
+            //     height: 470px;
+            // }
+            & > img {
+                @include large {
+                    width: 100%;
+                }
+            }
+        }
+        &-btn {
+            position: absolute;
+            top: 390px;
+            padding: 12px 17px;
+            background-color: rgba(42, 42, 42, 0.15);
+            transition: all .3s;
+            z-index: 10;
+            &.prev {
+                left: 0;
+            }
+            &.next {
+                right: 0;
+            }
+            &:hover {
+                background-color: rgba(42, 42, 42, 0.35);
+            }
+        }
+    }
+    &_description {
+        padding: 64px;
+        margin-top: -40px;
+        @include border($color: #EAEAEA);
+        background-color: $light;
+        @include large {
+            margin-top: 0;
+        }
+        &-title {
+            display: inline-block;
+            @include fstyle(14px, $color: $red);
+            line-height: 17px;
+        }
+        &-brand {
+            @include fstyle(18px, 300, #777);
+            line-height: 22px;
+            margin-bottom: 48px;
+        }
+        &-text {
+            @include fstyle(14px, 300, #5E5E5E);
+            line-height: 17px;
+            width: 50&;
+            margin: 0 auto 32px;
+        }
+        &-price {
+            @include fstyle(24px, 300, $red);
+            line-height: 29px;
+        }
+        &-choise {
+            justify-content: center;
+        }
+    }
+}
+
+.cart {
+    margin-top: 95px;
+    margin-bottom: 125px;
+    @include large {
+        margin-top: 58px;
+    }
+    @include middle {
+        margin-top: 30px;
+        margin-bottom: 90px;
+    }
+    &_place {
+        justify-content: space-between;
+        @include large {
+            flex-direction: column;
+        }
+    }
+    &_content {
+        &-btns {
+            margin-top: 70px;
+            justify-content: space-between;
+            @include large {
+                justify-content: space-around;
+                margin-bottom: 64px;
+            }
+        }
+    }
+    &_check {
+        width: 360px;
+        @include large {
+            width: 100%;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        @include middle {
+            flex-direction: column;
+        }
+        &-form {
+            width: 340px;
+        }
+        &-title {
+            @include fstyle(16px, 300);
+            line-height: 19px;
+            margin-bottom: 20px;
+        }
+        &-input {
+            padding: 16px 17px;
+            margin-bottom: 20px;
+            @include fstyle(13px, 300);
+            @include border($color: #444);
+            line-height: 17px;
+            outline: none;
+            &::placeholder {
+                color: lighten($accent, 50%);
+            }
+        }
+        &-total {
+            margin-top: 57px;
+            padding: 44px 42px;
+            background-color: $bg-gray;
+            @include large {
+                margin: auto 0;
+            }
+            @include middle {
+                margin-top: 48px;
+            }
+        }
+        &-subtotal {
+            @include fstyle(11px);
+            line-height: 13px;
+            text-transform: uppercase;
+            text-align: right;
+            margin-bottom: 12px;
+        }
+        &-grandtotal {
+            @include fstyle(16px, 300);
+            line-height: 19px;
+            text-transform: uppercase;
+            text-align: right;
+            margin-bottom: 21px;
+            & span {
+                color: $red;
+                font-weight: 400;
+            }
+        }
+        &-subtotal span, &-grandtotal span {
+            padding-left: 20px;
+        }
+    }
+}
+
+.register {
+    margin-bottom: 98px;
+    &_place {
+        justify-content: space-between;
+        @include middle {
+            flex-direction: column;
+        }
+    }
+    &_form {
+        width: 360px;
+        @include middle {
+            width: 100%;
+            margin-bottom: 40px;
+        }
+        &-title {
+            @include fstyle(16px, 300);
+            line-height: 19px;
+            margin-bottom: 20px;
+        }
+        &-input {
+            padding: 13px 17px;
+            margin-bottom: 20px;
+            @include fstyle(13px, 300);
+            @include border($color: #444);
+            line-height: 17px;
+            outline: none;
+            &::placeholder {
+                color: lighten($accent, 50%);
+            }
+        }
+        &-sex input[type=radio], &-sex label {
+            margin-right: 10px;
+        }
+        &-sex {
+            @include fstyle(11px, 300, #000);
+            line-height: 13px;
+            margin-bottom: 33px;
+        }
+        &-text {
+            @include fstyle(13px, 300, $text-gray);
+            line-height: 16px;
+        }
+    }
+    &_description {
+        width: 650px;
+        @include extra-large {
+            width: 550px;
+        }
+        @include large {
+            width: 350px;
+        }
+        @include middle {
+            width: 100%;
+        }
+        &-title {
+            text-transform: uppercase;
+        }
+        &-text, &-title, &-links {
+            @include fstyle(24px, 300, #000);
+            line-height: 29px;
+            margin-bottom: 21px;
+            @include large {
+                @include fstyle(16px, 300, #000);
+                line-height: 19px;
+            }
+        }
+        &-links li {
+            margin-bottom: 16px;
+        }
+        &-links .fa {
+            color: lighten($color: #000000, $amount: 30%);
+            margin-right: 20px;
+        }
+    }
+}
+
 .products {
     text-align: center;
-    margin: 96px 0;
+    margin-bottom: 96px;
+    @include middle {
+        margin-bottom: 64px
+    }
     &_title {
         @include fstyle(30px);
         line-height: 36px;
@@ -256,6 +494,55 @@
     }
     &_cards {
         justify-content: space-between;
+        @include large {
+            justify-content: space-around;
+            &.excess .product_card:last-child {
+                @include large {
+                    display: none;
+                }
+            }
+        }
+    }
+    &_filter {
+        margin-bottom: 64px;
+        @include large {
+            justify-content: space-around;
+            margin-bottom: 40px;
+        }
+        &-category {
+            width: 360px;
+            position: relative;
+            &:hover > .category_links{
+                display: block;
+                box-shadow: 6px 4px 32px rgba(0, 0, 0, 0.2);
+            }
+        }
+        &-group {
+            margin-left: 33px;
+            width: 360px;
+        }
+    }
+    &_pagination {
+        margin: 0 auto;
+        width: 285px;
+        padding: 15px;
+        border: 1px solid $bg-gray;
+        &-item {
+            @include fstyle(16px, 300);
+            line-height: 19px;
+            padding: 0 9px;
+            &:nth-child(2) {
+                @include fstyle(16px, $color: $red);
+            }
+            &.next, &.prev {
+                font-size: 25px;
+                color: #000;
+                font-weight: bold;
+            }
+            &:hover {
+                color: $red;
+            }
+        }
     }
 }
 
@@ -355,6 +642,10 @@
             border: none;
             outline: none;
             background-color: #e1e1e1;
+            transition: all .3s;
+            &:hover {
+                box-shadow: 0 0 20px #b9b9b9 inset;
+            }
         }
         &-button {
             padding: 15px;

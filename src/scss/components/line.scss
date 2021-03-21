@@ -1,0 +1,16 @@
+.line {   
+    border-color: $red;
+    overflow: hidden;
+    &_red {
+        border: none;
+        border-bottom: 3px solid $red;    
+        width: 63px;
+        margin: 12px auto;
+    }
+    &_black {
+        border: none;
+        border-bottom: 1px solid $red;
+        width: 75%;
+        margin: 64px auto;
+    }
+}

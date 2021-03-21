@@ -3,8 +3,7 @@
 
 .btn {
     @include font;
-    @include border($color: $red);
-    @include fstyle(16px, $color: $red);
+    @include fstyle(16px);
     display: inline-block;
     padding: 14px 38px;
     background-color: transparent;
@@ -14,20 +13,58 @@
     letter-spacing: 0.1em;
     line-height: 19px;
     margin-top: 48px;
-    transition: all .3s;
-    &:hover {
-        background-color: $red;
-        color: $light;
-    }
-    &-black {
-        @include border($color: $accent);
-        color: $accent;
+    transition: all .7s;
+    &_red {
+        @include border($color: $red);
+        color: $red;
         &:hover {
-            box-shadow: -2px -2px -2px black;
+            background-color: $red;
+            color: $light;
+        } 
+        &-check {
+            width: 85%;
+            background-color: $red;
+            color: $light;
+            padding: 14px 20px;
+            text-transform: uppercase;
+            margin-top: 17px;
+            outline: none;
+            border: none;
+            @include middle {
+                padding: 14px 18px;
+            }
+            &:hover {
+                box-shadow: 0 0 10px darken($red, 20%) inset;
+            }
         }
     }
-    &-block {
+    &_black {
+        @include border($color: $accent);
+        color: $accent;
+        text-transform: uppercase;
+        margin: 0;
+        @include middle {
+            @include fstyle(14px, 300);
+            line-height: 17px;
+            padding: 9px 12px;
+            text-transform: lowercase;
+        }
+        &:hover {
+            box-shadow: 0 0 5px $accent inset;
+        }
+    }
+    &_check {
+        width: 130px;
+        @include border($color: $accent);
+        @include fstyle(11px, 300, #4a4a4a);
+        margin: 0;
+        line-height: 14px;
+        padding: 14px 18px;
+        &:hover {
+            box-shadow: 0 0 3px $accent inset;
+        }
+    }
+    &_block {
         display: block;
-        width: 100%;
     }
 }

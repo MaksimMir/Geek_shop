@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop</title>
+    <title>Catalog</title>
     <script src="https://use.fontawesome.com/d62167d920.js"></script>
     <link rel="stylesheet" href="main.css">
 </head>
@@ -21,7 +21,7 @@
                 </div>
                 <nav class="top_right row col-6">
                     <li class="top_right-item"><a href="#"><i class="fa fa-bars"></i></a></li>
-                    <li class="top_right-item"><a href="registration.html"><i class="fa fa-user-o"></i></a></li>
+                    <li class="top_right-item"><a href="registration.htmproduct.html"><i class="fa fa-user-o"></i></a></li>
                     <li class="top_right-item"><a href="cart.html"><i class="fa fa-shopping-cart"></i></a></li>
                 </nav>
             </div>
@@ -32,7 +32,7 @@
                 <button class="menu_close">x</button>
             </div>
             <nav class="menu_list">
-                <li class="menu_list-title"><a href="catalog.html">Men</a> 
+                <li class="menu_list-title"><a href="catalog.html">Men</a>
                     <ul class="menu_list-submenu">
                         <li class="menu_list-item"><a href="product.html">Accessories</a></li>
                         <li class="menu_list-item"><a href="product.html">Bags</a></li>
@@ -40,7 +40,7 @@
                         <li class="menu_list-item"><a href="product.html">T-Shirts</a></li>
                     </ul>
                 </li>
-                <li class="menu_list-title"><a href="catalog.html">Women</a> 
+                <li class="menu_list-title"><a href="catalog.html">Women</a>
                     <ul class="menu_list-submenu">
                         <li class="menu_list-item"><a href="product.html">Accessories</a></li>
                         <li class="menu_list-item"><a href="product.html">Jackets & Coats</a></li>
@@ -49,7 +49,7 @@
                         <li class="menu_list-item"><a href="product.html">Shirts</a></li>
                     </ul>
                 </li>
-                <li class="menu_list-title"><a href="catalog.html">Kids</a> 
+                <li class="menu_list-title"><a href="catalog.html">Kids</a>
                     <ul class="menu_list-submenu">
                         <li class="menu_list-item"><a href="product.html">Accessories</a></li>
                         <li class="menu_list-item"><a href="product.html">Jackets & Coats</a></li>
@@ -64,67 +64,128 @@
     </header>
 
     <main>
-
-        <div class="poster">
+        <div class="links">
             <div class="container">
-                <div class="poster_content row">
-                    <div class="poster_content-img col-7"></div>
-                    <div class="poster_content-text col-5">
-                        <div class="poster_content-block">
-                            <p class="top_title">THE BRAND</p>
-                            <p class="row flex-wrap">
-                                <span class="poster_black">OF LUXERIOUS</span>
-                                <span class="poster_red">FASHION</span> 
-                            </p>
-                        </div>
+                <div class="links_content row">
+                    <p class="links_title">NEW ARRIVALS </p>
+                    <div class="links_address">
+                        <a href="index.html" class="links_address-black">HOME /</a>
+                        <a href="#" class="links_address-black">MEN /</a>      
+                        <span class="links_address-red">NEW ARRIVALS</span>
                     </div>
                 </div>
             </div>
         </div>
-
-            
-        <div class="offer">
-            <div class="container">
-                <div class="offer_items row">
-                    <div class="offer_item">
-                        <img class="offer_item-img" width="360" height="260" src="img/section_women.png" alt="offer img">
-                        <div class="offer_item-title">
-                            <p class="offer_item-text">30% OFF</p>
-                            <span class="offer_item-red">FOR WOMEN</span>
-                        </div>
-                    </div>
-                    <div class="offer_item">
-                        <img class="offer_item-img" width="360" height="260" src="img/section_men.png" alt="offer img">
-                        <div class="offer_item-title">
-                            <p class="offer_item-text">HOT DEAL</p>
-                            <span class="offer_item-red">FOR MEN</span>
-                        </div>
-                    </div>
-                    <div class="offer_item">
-                        <img class="offer_item-img" width="360" height="260" src="img/section_kids.png" alt="offer img">
-                        <div class="offer_item-title">
-                            <p class="offer_item-text">NEW ARRIVALS</p>
-                            <span class="offer_item-red">FOR KIDS</span>
-                        </div>
-                    </div>               
-                </div>
-                <div class="offer_item">
-                    <img class="offer_item-img" width="1140" height="180" src="img/section_accsories.png" alt="offer img">
-                    <div class="offer_item-title">
-                        <p class="offer_item-text">LUXIROUS & TRENDY</p>
-                        <span class="offer_item-red">ACCESORIES</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+    
         <div class="products">
             <div class="container">
-                <h2 class="products_title">Fetured Items</h2>
-                <p class="products_text">
-                    Shop for items based on what we featured in this week
-                </p>
-                <div class="products_cards row flex-wrap">
+                <div class="products_filter row">
+                    <div class="products_filter-category">
+                        <div class="category_title row">
+                            <p>Filter</p>
+                            <div class="category_nav">
+                                <div class="line-1"></div>
+                                <div class="line-2"></div>
+                                <div class="line-3"></div>
+                            </div>
+                        </div>
+                        <div class="category_links">
+                            <details class="category_box">
+                                <summary class="category_name">Category</summary>
+                                    <nav class="category_submenu">
+                                        <li><a href="#">Accessories</a></li>
+                                        <li><a href="#">Bags</a></li>
+                                        <li><a href="#">Denim</a></li>
+                                        <li><a href="#">Hoodies & Sweatshirts</a></li>
+                                        <li><a href="#">Jackets & Coats</a></li>
+                                        <li><a href="#">Polos</a></li>
+                                        <li><a href="#">Shirt</a></li>
+                                        <li><a href="#">Shoes</a></li>
+                                        <li><a href="#">Sweaters & Knits</a></li>
+                                        <li><a href="#">T-Shirts</a></li>
+                                        <li><a href="#">Tanks</a></li>
+                                    </nav>
+                            </details>
+                            <details class="category_box">
+                                <summary class="category_name">Brand</summary> 
+                                    <nav class="category_submenu">
+                                        <li><a href="#">1</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#">4</a></li>
+                                        <li><a href="#">5</a></li>
+                                        <li><a href="#">6</a></li>
+                                    </nav>
+                            </details>
+                            <details class="category_box">
+                                <summary class="category_name">Designer</summary>
+                                    <nav class="category_submenu">
+                                        <li><a href="#">1</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#">4</a></li>
+                                        <li><a href="#">5</a></li>
+                                    </nav>
+                            </details>
+                        </div>
+
+                    </div>
+                    <ul class="products_filter-group row">
+                        <li class="group_value">Tranding Now
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            <ul class="group_submenu">
+                                <li class="group_submenu-item">
+                                    <label>
+                                        <input type="checkbox" name="trand1">
+                                        Trendy-Brandy
+                                    </label>
+                                </li>
+                                <li class="group_submenu-item">
+                                    <label>
+                                        <input type="checkbox" name="trand2">
+                                        Brandy-trandy
+                                    </label>                               
+                                </li>
+                                <li class="group_submenu-item">
+                                    <label>
+                                        <input type="checkbox" name="trand3">
+                                        Balalaika
+                                    </label>
+                                </li>   
+                                <li class="group_submenu-item">
+                                    <label>
+                                        <input type="checkbox" name="trand4">
+                                        Gutalaks
+                                    </label>                               
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="group_value">Size
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            <ul class="group_submenu">
+                                <li class="group_submenu-item"><input type="checkbox" name="xs">xs</li>
+                                <li class="group_submenu-item"><input type="checkbox" name="s">s</li>
+                                <li class="group_submenu-item"><input type="checkbox" name="m">m</li>
+                                <li class="group_submenu-item"><input type="checkbox" name="l">l</li>
+                            </ul>
+                        </li>
+                        <li class="group_value">Price
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            <ul class="group_submenu">
+                                <li class="group_submenu-item">
+                                    <label>от
+                                        <input type="number" placeholder="0">
+                                    </label>
+                                    <label>до
+                                        <input type="number" placeholder="0">
+                                    </label>
+                                </li>
+                            </ul>
+    
+                        </li>
+                    </ul>
+                </div>
+                <div class="products_cards row flex-wrap excess">
                     <div class="product_card">
                         <div class="product_card-img">
                             <img src="img/box_img-1.png" width="360" height="420" alt="product img">
@@ -143,7 +204,7 @@
                     </div>
                     <div class="product_card">
                         <div class="product_card-img">
-                            <img src="img/box_img-2.png" width="360" height="420" alt="product img">
+                            <img src="img/box_img-12.png" width="360" height="420" alt="product img">
                         </div>
                         <div class="product_card-text">
                             <p class="box_title">
@@ -191,7 +252,7 @@
                     </div>
                     <div class="product_card">
                         <div class="product_card-img">
-                            <img src="img/box_img-5.png" width="360" height="420" alt="product img">
+                            <img src="img/box_img-7.png" width="360" height="420" alt="product img">
                         </div>
                         <div class="product_card-text">
                             <p class="box_title">
@@ -207,7 +268,55 @@
                     </div>
                     <div class="product_card">
                         <div class="product_card-img">
-                            <img src="img/box_img-6.png" width="360" height="420" alt="product img">
+                            <img src="img/box_img-8.png" width="360" height="420" alt="product img">
+                        </div>
+                        <div class="product_card-text">
+                            <p class="box_title">
+                                ELLERY X M'O CAPSULE
+                            </p>
+                            <p class="box_text">
+                                Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.
+                            </p>
+                            <p class="box_price">
+                                $52.00
+                            </p>
+                        </div>
+                    </div>
+                    <div class="product_card">
+                        <div class="product_card-img">
+                            <img src="img/box_img-9.png" width="360" height="420" alt="product img">
+                        </div>
+                        <div class="product_card-text">
+                            <p class="box_title">
+                                ELLERY X M'O CAPSULE
+                            </p>
+                            <p class="box_text">
+                                Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.
+                            </p>
+                            <p class="box_price">
+                                $52.00
+                            </p>
+                        </div>
+                    </div>
+                    <div class="product_card">
+                        <div class="product_card-img">
+                            <img src="img/box_img-10.png" width="360" height="420" alt="product img">
+                        </div>
+                        <div class="product_card-text">
+                            <p class="box_title">
+                                ELLERY X M'O CAPSULE
+                            </p>
+                            <p class="box_text">
+                                Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.
+                            </p>
+                            <p class="box_price">
+                                $52.00
+                            </p>
+                        </div>
+                    </div>
+                    <div class="product_card">
+                        <div class="product_card-img">
+                            <img src="img/box_img-11.png" width="360" height="420" alt="product img">
                         </div>
                         <div class="product_card-text">
                             <p class="box_title">
@@ -222,11 +331,21 @@
                         </div>
                     </div>
                 </div>
-                <a href="#" class="btn btn_red">Browse All Product</a>
+                <nav class="products_pagination row">
+                    <li class="products_pagination-item prev"><a href="#"><</a></li>
+                    <li class="products_pagination-item"><a href="#">1</a></li>
+                    <li class="products_pagination-item"><a href="#">2</a></li>
+                    <li class="products_pagination-item"><a href="#">3</a></li>
+                    <li class="products_pagination-item"><a href="#">4</a></li>
+                    <li class="products_pagination-item"><a href="#">5</a></li>
+                    <li class="products_pagination-item"><a href="#">6</a></li>
+                    <li class="products_pagination-item">...</li>
+                    <li class="products_pagination-item"><a href="#">20</a></li>
+                    <li class="products_pagination-item next"><a href="#">></a></li>
+                </nav>
             </div>
         </div>
     </main>
-
 
     <div class="feature">
         <div class="container">
@@ -287,7 +406,7 @@
                         <p class="subscrabe_form-title">SUBSCRIBE</p> 
                         <p class="subscrabe_form-subtitle">FOR OUR NEWLETTER AND PROMOTION</p> 
                         <form>
-                            <input class="subscrabe_form-input" type="email" placeholder="Enter Your Email" required>
+                            <input class="subscrabe_form-input" type="email" placeholder="Enter Your Email">
                             <input class="subscrabe_form-button" type="submit" value="Subscribe">  
                         </form> 
                     </div>

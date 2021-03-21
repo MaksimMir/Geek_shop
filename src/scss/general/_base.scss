@@ -29,7 +29,7 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 }
-ol, ul {
+ol, ul, nav {
 	list-style: none;
 }
 blockquote, q {
@@ -51,9 +51,11 @@ a {
 }
 
 body {
+	height: 100vh;
 	width: 100%;
-	background-color: $bg-gray;
+	background-color: $bg-box;
 	@include font;
+	overflow-x: hidden;
 }
 
 .container {
@@ -68,11 +70,16 @@ body {
 }
 
 .flex-column {
+	display: flex;
 	flex-direction: column;
 }
 
 .flex-wrap {
 	flex-wrap: wrap;
+}
+
+footer {
+	margin-top: auto;
 }
 
 @for $var from 1 through 12 {
@@ -81,3 +88,11 @@ body {
 	}
 }
 
+@for $var from 1 through 3 {
+	.line-#{$var} {
+		width: 120% - 20 * $var;
+		height: 2px;
+		margin-bottom: 2px;
+		background-color: #000;
+	}
+}
