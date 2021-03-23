@@ -4,20 +4,46 @@
         line-height: 17px;
         text-transform: uppercase;
         text-align: left;
-        padding: 0 18px;
+        padding: 10px 18px;
         cursor: pointer;
+        @include middle {
+            padding: 0;
+        }
+        &-red {
+            color: $red;
+        }
+        & p {
+            @include middle {
+                display: none;
+            }
+        }
     }
     &_nav {
         display: inline-block;
         width: 20px;
         height: 12px;
         padding: 3px 10px;
+        @include middle {
+            width: 37px;
+            height: 25px;
+        }
+        &.red div {
+            background-color: $red;
+        }
     }
     &_links {
         display: none;
+        padding-top: 10px;
+        opacity: 0;
         position: absolute;
+        top: -10px;
+        left: 0;
         width: 100%;
         z-index: 10;
+        box-shadow: 6px 4px 24px rgba($color: #000000, $alpha: .2);
+        @include middle {
+            width: 340px;
+        }
     }
     &_box {
         padding: 14px 18px;

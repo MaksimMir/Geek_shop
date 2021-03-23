@@ -187,6 +187,7 @@
         justify-content: space-between;
         @include middle {
             flex-direction: column;
+            align-items: center;
         }
     }
     &_item {
@@ -211,6 +212,12 @@
         }
         &-img {
             width: 100%;
+            @include large {
+                height: 170px;
+            }
+            @include middle {
+                height: 250px;
+            }
         }
         &-title {
             position: absolute;
@@ -228,6 +235,11 @@
             line-height: 25px;
         }
     }
+    &_items + .offer_item > img {
+        @include large {
+            height: 118px;
+        }
+    }
     
 }
 
@@ -236,7 +248,7 @@
     text-align: center;
     &_slider {
         position: relative;
-        min-height: 550px;
+        min-height: 455px;
         background-color: #f7f7f7;
         @include border($color: #e0e0e0);
         z-index: -10;
@@ -256,11 +268,15 @@
                 @include large {
                     width: 100%;
                 }
+                @include middle {
+                    height: 455px;
+                    width: 370px;
+                }
             }
         }
         &-btn {
             position: absolute;
-            top: 390px;
+            top: 47%;
             padding: 12px 17px;
             background-color: rgba(42, 42, 42, 0.15);
             transition: all .3s;
@@ -283,6 +299,9 @@
         background-color: $light;
         @include large {
             margin-top: 0;
+        }
+        @include middle {
+            padding: 64px 0;
         }
         &-title {
             display: inline-block;
@@ -506,20 +525,34 @@
     &_filter {
         margin-bottom: 64px;
         @include large {
-            justify-content: space-around;
+            justify-content: space-evenly;
             margin-bottom: 40px;
         }
         &-category {
             width: 360px;
             position: relative;
-            &:hover > .category_links{
+            background-color: $bg-box;
+            @include extra-large {
+                width: 320px;
+            }
+            @include middle {
+                width: 70px;
+            }
+            &:hover .category_links {
                 display: block;
-                box-shadow: 6px 4px 32px rgba(0, 0, 0, 0.2);
+                transition: opacity .5s;
+                opacity: 1;
             }
         }
         &-group {
             margin-left: 33px;
             width: 360px;
+            @include extra-large {
+                width: 320px;
+            }
+            @include large {
+                justify-content: flex-end;
+            }
         }
     }
     &_pagination {
@@ -614,7 +647,10 @@
             left: 0;
             position: absolute;
             opacity: 0;
-            transition: opacity 1s;
+            transition: all 1s;
+            & img {
+                border-radius: 50px;
+            }
             &.showed {
                 opacity: 1;
             }
