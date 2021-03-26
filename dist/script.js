@@ -69,12 +69,12 @@ window.addEventListener("load", () => {
             if(index > 0) index--;              
             slideShow(width, pos); 
         });
+
+        function slideShow(w, p) {
+            p = w.replace(/px/g, '') * index; 
+            line.style.transition = 'all 1s'; 
+            line.style.marginLeft = -p + 'px';
+        }
     } catch (error) {}
-    
-    function slideShow(w, p) {
-        p = w.replace(/px/g, '') * index; 
-        line.style.transition = 'all 1s'; 
-        line.style.marginLeft = -p + 'px';
-    }
 });
 
