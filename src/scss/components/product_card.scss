@@ -17,9 +17,15 @@
         width: 100%;
     }
     &-text {
+        display: flex;
+        flex-direction: column;
         padding: 25px 18px 20px;
         background-color: $bg-gray;
     }
+}
+
+.box_price {
+    margin-top: auto;
 }
 
 .black {

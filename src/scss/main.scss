@@ -17,7 +17,7 @@
     display: inline-block;
     width: 44px;
     height: 38px;
-    background: url('img/logo.svg') no-repeat center;
+    background: url('img/logo.png') no-repeat center;
 }
 
 .top {
@@ -38,21 +38,24 @@
         margin-left: 0;
         width: 100%;
     }
-    & .fa {
-        padding: 7px 40px;
+    &-search {
+        margin-left: 30px;
+        padding: 5px;
         @include middle {
-            padding-right: 20px;
+            margin-left: 20px;
         }
-    }
-    & input {
-        background-color: $accent;
-        border: none;
-        outline: none;
-        width: 50%;
-        font-size: 14px;
-        color: $text-light;
-        @include middle {
-            width: 20%;
+        & input {
+            background-color: $accent;
+            border: none;
+            outline: none;
+            width: 300px;
+            margin-left: 30px;
+            font-size: 14px;
+            color: $text-light;
+            @include middle {
+                margin-left: 20px;
+                width: 100%;
+            }
         }
     }
 }
@@ -69,26 +72,27 @@
     &-item {
         padding-left: 33px;
         position: relative;
-        & .fa-shopping-cart::after {
-            content: '1';
-            position: absolute;
-            display: block;
-            width: 14px;
-            height: 14px;
-            border-radius: 7px;
-            background-color: $red;
-            font-size: 3px;
-            text-align: center;
-            line-height: 17px;
-            top: -2px;
-            right: -7px;
-        }
         &:nth-child(2), &:last-child {
             @include middle {
                 display: none;
             }
         }
     }
+}
+
+.cart-count {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 14px;
+    height: 14px;
+    border-radius: 7px;
+    background-color: $red;
+    font-size: 3px;
+    text-align: center;
+    line-height: 14px;
+    top: -2px;
+    right: -7px;
 }
 
 .poster {
@@ -197,16 +201,6 @@
         @include middle {
             margin-right: 0;
         }
-        &::before {
-            content: '';
-            top: 0;
-            left: 0;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            background-color: rgba(33, 22, 22, 0.7);
-        }
         &:last-child {
             margin-right: 0;
         }
@@ -251,9 +245,7 @@
         min-height: 455px;
         background-color: #f7f7f7;
         @include border($color: #e0e0e0);
-        z-index: -10;
         @include large {
-            z-index: 0;
             border: none;
         }
         &-box {
@@ -261,25 +253,31 @@
             margin: 0 auto;
             padding: 20px 0;
             box-sizing: border-box;
+            overflow: hidden;
             // @include large {
             //     height: 470px;
             // }
-            & > img {
-                @include large {
-                    width: 100%;
-                }
-                @include middle {
-                    height: 455px;
-                    width: 370px;
-                }
+        }
+        &-line > img {
+            @include large {
+                width: 100%;
+            }
+            @include middle {
+                height: 455px;
+                width: 370px;
             }
         }
         &-btn {
             position: absolute;
-            top: 47%;
-            padding: 12px 17px;
+            font-size: 30px;
+            font-weight: bold;
+            top: 50%;
+            padding: 4px 13px;
+            border: none;
+            outline: none;
             background-color: rgba(42, 42, 42, 0.15);
             transition: all .3s;
+            cursor: pointer;
             z-index: 10;
             &.prev {
                 left: 0;
@@ -288,11 +286,13 @@
                 right: 0;
             }
             &:hover {
-                background-color: rgba(42, 42, 42, 0.35);
+                color: $red;
+                background-color: rgba(42, 42, 42, 0.05);
             }
         }
     }
     &_description {
+        position: relative;
         padding: 64px;
         margin-top: -40px;
         @include border($color: #EAEAEA);
@@ -316,15 +316,26 @@
         &-text {
             @include fstyle(14px, 300, #5E5E5E);
             line-height: 17px;
-            width: 50&;
+            width: 70%;
             margin: 0 auto 32px;
         }
         &-price {
             @include fstyle(24px, 300, $red);
             line-height: 29px;
+            margin: 0 auto;
+            width: 60%;
+            padding-bottom: 64px;
+            border-bottom: 1px solid #EAEAEA;
+            @include middle {
+                padding-bottom: 31px;
+            }
         }
         &-choise {
             justify-content: center;
+            margin-top: 64px;
+            @include middle {
+                margin-top: 46px;
+            }
         }
     }
 }
@@ -540,8 +551,6 @@
             }
             &:hover .category_links {
                 display: block;
-                transition: opacity .5s;
-                opacity: 1;
             }
         }
         &-group {
@@ -557,23 +566,25 @@
     }
     &_pagination {
         margin: 0 auto;
-        width: 285px;
+        width: 280px;
         padding: 15px;
         border: 1px solid $bg-gray;
-        &-item {
-            @include fstyle(16px, 300);
+        &-item button{
+            border: none;
+            outline: none;
+            padding: 0 10px;
+            background-color: inherit;
+            @include fstyle(16px, 300, lighten($accent, 50%));
             line-height: 19px;
-            padding: 0 9px;
-            &:nth-child(2) {
-                @include fstyle(16px, $color: $red);
-            }
-            &.next, &.prev {
-                font-size: 25px;
-                color: #000;
-                font-weight: bold;
-            }
-            &:hover {
+            cursor: pointer;
+            &:hover, &.focus {
                 color: $red;
+            }
+        }
+        &-item {
+            &.next button, &.prev button {
+                @include fstyle(22px);
+                line-height: 24px;
             }
         }
     }
@@ -604,18 +615,8 @@
 }
 
 .subscrabe {
-    position: relative;
-    background: url('img/bottom_bg.png') no-repeat center;
+    background: url('img/bottom_bg.jpg') no-repeat center;
     background-size: cover;
-    &::before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        background: rgba(244, 244, 244, 0.7);
-    }
     &_content {
         justify-content: space-between;
         @include large {
