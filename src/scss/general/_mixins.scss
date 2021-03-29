@@ -3,12 +3,6 @@
     border-radius: $radius;
 }
 
-@mixin applay-p {
-    p {
-        @content;
-    }
-}
-
 @mixin extra-large {
     @media (max-width: 1200px) {
         @content; 
@@ -23,12 +17,6 @@
 
 @mixin middle {
     @media (max-width: 768px) {
-        @content; 
-    }     
-}
-
-@mixin small {
-    @media (max-width: 375px) {
         @content; 
     }     
 }

@@ -10,26 +10,3 @@ $red: #F16D7F;
 $text-light: #E8E8E8;
 $text-gray: #5D5D5D;
 $bg-box: #fdfcfc;
-
-
-
-// $select-color: (
-//     primary: #3d67da,
-//     danger: #d33030,
-//     warning: #c3bb1a,
-//     success: #369c36,
-//     info: #03a9f4
-// )
-
-// .p {
-//     @each $status, $color in $select-color {
-//         &-#{$status} {
-//             @include font;
-//             background: $color;
-//             color: $light;
-//             &:hover {
-//                 background: darken($color, 20%);
-//             }  
-//         }   
-//     }
-// }

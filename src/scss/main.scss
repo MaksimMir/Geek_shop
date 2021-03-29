@@ -39,8 +39,8 @@
         width: 100%;
     }
     &-search {
-        margin-left: 30px;
         padding: 5px;
+        margin-left: 30px;
         @include middle {
             margin-left: 20px;
         }
@@ -52,6 +52,9 @@
             margin-left: 30px;
             font-size: 14px;
             color: $text-light;
+            @include large {
+                width: 220px;
+            }
             @include middle {
                 margin-left: 20px;
                 width: 100%;
@@ -254,9 +257,9 @@
             padding: 20px 0;
             box-sizing: border-box;
             overflow: hidden;
-            // @include large {
-            //     height: 470px;
-            // }
+            @include middle {
+                width: 370px;
+            }
         }
         &-line > img {
             @include large {
