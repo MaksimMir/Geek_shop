@@ -60,11 +60,16 @@ body {
 	width: 100%;
 	background-color: $bg-box;
 	@include font;
+	display: flex;
+	flex-direction: column;
 }
 
 main {
 	position: relative;
-	overflow: hidden;
+}
+
+footer {
+	margin-top: auto;
 }
 
 .container {

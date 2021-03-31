@@ -3,10 +3,13 @@
 @import '../general/mixins';
 
 .product_card {
+    display: flex;
+    flex-direction: column;
     position: relative;
     width: 360px;
     text-align: left;
     margin-bottom: 30px;
+    background-color: $bg-gray;
     @include extra-large {
         width: 320px;
     }
@@ -14,21 +17,12 @@
         height: 420px;
         @include extra-large {
             height: 373px;
+            width: 320px;
         }
     }
-    &-img > img {
-        width: 100%;
-    }
     &-text {
-        display: flex;
-        flex-direction: column;
-        padding: 25px 18px 20px;
-        background-color: $bg-gray;
+        padding: 25px 18px 20px;    
     }
-}
-
-.box_price {
-    margin-top: auto;
 }
 
 .black {

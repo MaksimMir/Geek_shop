@@ -16,7 +16,6 @@
     @include font;
     @include fstyle(13px, $color: #000);
     line-height: 16px;
-    margin-bottom: 12px;
     text-transform: uppercase;
 }
 
@@ -24,13 +23,15 @@
     @include font;
     @include fstyle(14px, 300, $text-gray);
     line-height: 17px;
-    margin-bottom: 18px;
+    margin-top: 12px;
 }
 
 .box_price {
     @include font;
     @include fstyle(16px, $color: $red);
     line-height: 19px;
+    margin-top: auto;
+    padding: 0 18px 20px;
 }
 
 .feature_title {

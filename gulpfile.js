@@ -32,7 +32,7 @@ gulp.task('imagemin', function() {
 });
 
 gulp.task("script", () => {
-    return gulp.src('src/js/script.js')
+    return gulp.src('src/js/**.js')
     .pipe(gulp.dest(dist))
     .pipe(browsersync.stream());
 });
@@ -47,7 +47,7 @@ gulp.task("watch", () => {
     gulp.watch("./src/**.html", gulp.parallel("copy-html"));
     gulp.watch("./src/img/**", gulp.parallel("imagemin"));
     gulp.watch("./src/scss/**/*.scss", gulp.parallel("build-sass"));
-    gulp.watch("./src/js/script.js", gulp.parallel("script"));
+    gulp.watch("./src/js/**.js", gulp.parallel("script"));
 });
 
 gulp.task("build", gulp.parallel("copy-html", "imagemin", "build-sass", "script"));

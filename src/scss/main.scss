@@ -262,12 +262,18 @@
             }
         }
         &-line > img {
+            transform: scale(1);
+            transition: all .7s ease;
             @include large {
                 width: 100%;
             }
             @include middle {
                 height: 455px;
                 width: 370px;
+            }
+            &:hover {
+                transform: scale(1.2);
+                transition: all .7s ease;
             }
         }
         &-btn {
@@ -553,7 +559,8 @@
                 width: 70px;
             }
             &:hover .category_links {
-                display: block;
+                animation: slide-in-elliptic-top-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+                animation-delay: .3s;
             }
         }
         &-group {
@@ -631,7 +638,6 @@
         position: relative;
         min-height: 460px;
         text-align: center;
-        z-index: 10;
         @include large {
             min-height: 250px;
         }
@@ -647,11 +653,12 @@
             font-style: italic;
         }
         & .item {
-            top: 25%;
-            left: 0;
             position: absolute;
+            top: 35%;
+            left: 0;
+            right: 0;
             opacity: 0;
-            transition: all 1s;
+            transition: opacity 1s;
             & img {
                 border-radius: 50px;
             }
