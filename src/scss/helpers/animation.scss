@@ -3,52 +3,54 @@
     animation-fill-mode: both;
 }
 
-@keyframes slide-in-right {
+@keyframes right-bck {
     0% {
-      transform: translateX(0);
-      opacity: 0.5;
-    }
-    100% {
-      transform: translateX(-240px);
-      opacity: 1;
-    }
-}
-
-@keyframes slide-out-right {
-    0% {
-      transform: translateX(-240px);
+      transform: scaleX(1);
+      transform-origin: right;
       opacity: 1;
     }
     100% {
-      transform: translateX(0);
+      transform: scaleX(0);
+      transform-origin: right;
       opacity: 0;
     }
 }
 
-.slideInLeft { 
-    animation-name:slideInLeft
+@keyframes right-fwd {
+    0% {
+      transform: scaleX(0);
+      transform-origin: right;
+      opacity: 0;
+    }
+    100% {
+      transform: scaleX(1);
+      transform-origin: right;
+      opacity: 1;
+    }
 }
 
-@keyframes slideInRight { 
-    from { 
-        transform: translate3d(100%,0,0);
-        visibility: visible;
+@keyframes slide-in-elliptic-top-fwd {
+    0% {
+      transform: translateY(-100px) rotateX(-15deg) scale(0);
+      transform-origin: 50% 100%;
+      opacity: 0;
     }
-    to { 
-        transform: translate3d(0,0,0);
+    100% {
+      transform: translateY(0) rotateX(0) scale(1);
+      transform-origin: 50% 1400px;
+      opacity: 1;
     }
 }
-
-.slideInRight {
-    animation-name: slideInRight
-}
-
-@keyframes slideInUp { 
-    from {
-        transform: translate3d(0,100%,0);
-        visibility: visible;
+  
+@keyframes slide-out-elliptic-top-bck {
+    0% {
+      transform: translateY(0) rotateX(0) scale(1);
+      transform-origin: 50% 1400px;
+      opacity: 1;
     }
-    to {
-        transform: translate3d(0,0,0)
+    100% {
+      transform: translateY(-100px) rotateX(-15deg) scale(0);
+      transform-origin: 50% 100%;
+      opacity: 0;
     }
 }

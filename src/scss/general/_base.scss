@@ -64,6 +64,10 @@ body {
 	flex-direction: column;
 }
 
+#transition_desabled {
+	transition: none !important;
+}
+
 main {
 	position: relative;
 }

@@ -1,4 +1,7 @@
 window.addEventListener("load", () => {
+    // transition-none
+    document.body.removeAttribute('id');
+    
     const burger = document.querySelector('.hamburger');
     const menu = document.querySelector('.menu');
     const close = document.querySelector('.menu_close');
@@ -31,9 +34,9 @@ window.addEventListener("load", () => {
         const line = document.querySelector('.preview_slider-line');
         const prev = document.querySelector('.prev');
         const next = document.querySelector('.next');
-
-        let width = window.getComputedStyle(line.parentNode).width;
-
+        
+        let width = window.getComputedStyle(line.parentNode).width;;
+ 
         for (const slide of slides) {
             slide.style.width = width;
         };
